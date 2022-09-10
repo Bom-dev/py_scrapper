@@ -13,14 +13,14 @@ def extract_wwr_jobs(term):
             title = job.find_all('span', class_='title')
             company = job.find_all('span', class_='company')
             location = job.find_all("span", class_='region company')
-            link = job.find_all('a')
+            # link = job.find_all('a')
             # if len(title) == 1:
             #     print(f"Job: {title[0].string} @ {company[0].string}")
             # if len(each_location) == 1:
             #     print(each_location[0].string)
             # print("==========================================")
             job_data = {
-                'link': f"https://weworkremotely.com/remote-jobs/{link}",
+                # 'link': f"https://weworkremotely.com/remote-jobs/{link}",
                 'title': title[0].string,
                 'company': company[0].string,
                 'location': location[0].string
