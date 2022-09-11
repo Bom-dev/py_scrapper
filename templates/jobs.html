@@ -10,12 +10,24 @@
 <body>
   <main class='container'>
     <h1>Job results for "{{keyword}}":</h1>
-    <ul>
-      {% for job in jobs %}
-      <li>{{job.position}} @ {{job.company}}</li>
-      <p>Details: {{job.location}}</p>
-      {% endfor %}
-    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>Position</th>
+          <th>Company</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for job in jobs %}
+        <tr>
+          <td><strong>{{job.position}}</strong></td>
+          <td>{{job.company}}</td>
+          <td>{{job.location}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </main>
 </body>
 </html>
