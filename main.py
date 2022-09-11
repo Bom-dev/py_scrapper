@@ -1,7 +1,5 @@
 # from requests import get
 # from bs4 import BeautifulSoup
-# from extractors.rok import extract_rok_jobs
-# from extractors.wwr import extract_wwr_jobs
 # from selenium import webdriver
 # from selenium.webdriver.chrome.options import Options
 # from file import save_to_file
@@ -15,7 +13,9 @@
 
 # save_to_file(keyword, jobs)
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from extractors.rok import extract_rok_jobs
+from extractors.wwr import extract_wwr_jobs
 
 app = Flask("Scrapper")
 
@@ -27,7 +27,11 @@ def home():
 
 @app.route("/jobs")
 def jobs():
-    return render_template("jobs.html")
+    keyword = request.args.get("keyword")
+    rok = extract_rok_jobs(keyword)
+    wwr = extract_wwr_jobs(keyword)
+    jobs = rok + wwr
+    return render_template("jobs.html", keyword=keyword, jobs=jobs)
 
 
 app.run("0.0.0.0")

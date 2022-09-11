@@ -4,9 +4,18 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+  <title>Python Scrapper - Result</title>
 </head>
 <body>
-  <h1>Job result here</h1>
+  <main class='container'>
+    <h1>Job results for "{{keyword}}":</h1>
+    <ul>
+      {% for job in jobs %}
+      <li>{{job.position}} @ {{job.company}}</li>
+      <p>Details: {{job.location}}</p>
+      {% endfor %}
+    </ul>
+  </main>
 </body>
 </html>
