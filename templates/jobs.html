@@ -9,25 +9,28 @@
 </head>
 <body>
   <main class='container'>
-    <h1>Job results for "{{keyword}}":</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>Position</th>
-          <th>Company</th>
-          <th>Details</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for job in jobs %}
-        <tr>
-          <td><strong>{{job.position}}</strong></td>
-          <td>{{job.company}}</td>
-          <td>{{job.location}}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+    <h1>Job results for "{{keyword}}"</h1>
+    <a target="_blank" href="/export?keyword={{keyword}}">Export to File</a>
+    <figure>
+      <table role='grid'>
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>Company</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for job in jobs %}
+          <tr>
+            <td><strong>{{job.position}}</strong></td>
+            <td>{{job.company}}</td>
+            <td>{{job.location}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </figure>
   </main>
 </body>
 </html>
