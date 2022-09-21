@@ -27,6 +27,9 @@ db = {}
 def home():
     return render_template("home.html")
 
+if __name__ == '__main__':
+    app.run()
+
 
 @app.route("/jobs")
 def jobs():
@@ -52,6 +55,3 @@ def export():
         return redirect(f"/search?keyword={keyword}")
     save_to_file(keyword, db[keyword])
     return send_file(f"{keyword}.csv", as_attachment=True)
-
-
-app.run()
