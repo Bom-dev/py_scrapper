@@ -2,7 +2,7 @@
 
 ## Project Description
 
-This is an app to display job search result. User can look up and export the database.
+This is an app to display job search result using Python & Flask. Users can look up and export the database.
 
 ## URLs
 
@@ -11,40 +11,34 @@ This is an app to display job search result. User can look up and export the dat
 
 ## Technologies
 
-- Python, Flask, HTML, Heroku
+- Python, Flask, HTML, Pico CSS, Heroku
 
 ## Wire Frames
 
-<img width="983" alt="Screen Shot 2022-07-12 at 10 56 29 AM" src="https://media.git.generalassemb.ly/user/42781/files/1bb822a9-e57c-4c14-9e6e-7f1436a213bf">
+<img width="700" alt="job scrapper wireframe" src="./img.png">
 
 ## Models
 
-####Backend
-
-- Winemaker
-- Wine
-
-####Frontend
-
-- App.js
-- Home / Wine (List + Details) / WineMaker (List + Detail) / Favorite (List + Detail)
+- Home (Search keyword for jobs)
+- Jobs (Display search results with locations)
+- Export (Download search result file)
 
 ## User Stories
 
-- A user can browse the wine list and winemaker list from the database
-- A user can choose to check the detail page for wine or winemaker
-- A user can select and unselect your wine in their favorite tap
-- A user can go to the website to buy the wine directly
+- A user can search job list from the keyword they chose
+- A user can browse job listing as their keywords
+- A user can download csv file for the future
 
 ### MVP Goals
 
-- Display the wine list and winemaker list from the database
-- Display the detail page when a user clicks a wine or a winemaker from the list
-- Display the favorite tap for a user to store/unstore their favorite bottle
-- Display the button to go to the website to buy the wine directly
+- Display job listing according to the keyword the user choose
+- Style it using Pico CSS
+- Organize the result clearly
+- Decrease waiting time when the user already have the database
+- Set a export to file button for the result
 
 ### Stretch Goals
 
-- Make a search bar for wine and winemaker
-- A user can write a note/comment about favorite wine
-- A user can get recommendations by the option they chose
+- Display direct links to apply for the job
+- Display more information about the job
+- Set options to choose which website to search
