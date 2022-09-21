@@ -54,4 +54,4 @@ def export():
     return send_file(f"{keyword}.csv", as_attachment=True)
 
 
-app.run("https://job-scrapper-bom.herokuapp.com/")
+app.run()
